@@ -5,7 +5,7 @@ import { catchError } from 'rxjs/operators';
 import { map } from 'rxjs/operators';
 
 // Declaring the api url that will provide data for the cleint app
-const apiUrl = 'https://serene-castle-59289.herokuapp.com/';
+const apiUrl = 'https://femmovies.herokuapp.com/';
 // Get token from localStorage
 const token = localStorage.getItem('token');
 // Get username from localStorage for endpoints
@@ -14,9 +14,8 @@ const username = localStorage.getItem('user');
 @Injectable({
   providedIn: 'root'
 })
-export class UserRegistrationService {
-  // Inject the HttpClient module to the constructor params
-  // This will provide HttpClient to the entire class, making it available via this.http
+export class FetchApiDataService {
+  // Inject HttpClient module to constructor params
   constructor(private http: HttpClient) { }
 
   /**
