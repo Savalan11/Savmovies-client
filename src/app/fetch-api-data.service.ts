@@ -5,7 +5,7 @@ import { catchError } from 'rxjs/operators';
 import { map } from 'rxjs/operators';
 
 // Declaring the api url that will provide data for the cleint app
-const apiUrl = 'https://femmovies.herokuapp.com/';
+const apiUrl = 'https://serene-castle-59289.herokuapp.com/';
 // Get token from localStorage
 const token = localStorage.getItem('token');
 // Get username from localStorage for endpoints
