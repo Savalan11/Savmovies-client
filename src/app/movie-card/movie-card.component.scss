@@ -1,6 +1,6 @@
-$backgroundColor: #f8f9fa;
+$backgroundColor: #E9DAC1;
 $cardColor: #fff;
-$textColor: #343a40;
+$textColor: #4C3A51;
 $boxShadowColor: #e9ecef;
 
 .movie-view {
@@ -35,14 +35,14 @@ $boxShadowColor: #e9ecef;
 
 .movies-title {
     display: flex;
-    max-width: 210px;
+    max-width: 230px;
     justify-content: center;
     text-align: center;
     line-height: normal;
 }
 
 img {
-    width: 250px;
+    width: 270px;
     height: 350px;
     object-fit: contain;
 }
