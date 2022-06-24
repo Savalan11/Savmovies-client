@@ -11,7 +11,9 @@ describe('DirectorComponent', () => {
       declarations: [ DirectorComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(DirectorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

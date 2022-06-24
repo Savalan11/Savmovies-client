@@ -12,42 +12,36 @@ import { Router } from '@angular/router';
 })
 export class UserLoginFormComponent implements OnInit {
 
-  @Input() userCredentials = { Username: '', Password: ''};
+  @Input() userData = { Username: '', Password: '' };
 
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
     public snackBar: MatSnackBar,
     public router: Router
-    ) { }
+  ) { }
 
-  ngOnInit(): void {}
-
-  /**
-   * logs the user in
-   * displays message telling the user to have successfully logged in
-   * navigates to movies page
-   * @function userLogin
-   */
-  loginUser(): void {
-    this.fetchApiData.userLogin(this.userCredentials).subscribe(
-      (response) => {
-        console.log(response);
-        localStorage.setItem('user', response.user.Username);
-        localStorage.setItem('token', response.token);
-        this.dialogRef.close();
-        this.snackBar.open('You are logged in', 'OK', {
-          duration: 2000,
-          verticalPosition: 'top'
-        });
-        this.router.navigate(['movies']);
-      },
-      (response) => {
-        this.snackBar.open(response, 'OK', {
-          duration: 2000,
-        });
-      }
-    );
+  ngOnInit(): void {
   }
 
+  /**
+   * sends form inputs for user login to backend via fetchApiData Service
+   */
+  loginUser(): void {
+    this.fetchApiData.userLogin(this.userData).subscribe((result) => {
+      this.dialogRef.close(); // Close the modal on success
+      console.log(result);
+      // Add token and username to local Storage
+      localStorage.setItem('token', result.token);
+      localStorage.setItem('user', result.user.Username);
+
+      // Redirect to movies (main) page
+      this.router.navigate(['movies']);
+    }, (result) => {
+      console.log(result);
+      this.snackBar.open(result, 'OK', {
+        duration: 2000
+      });
+    });
+  }
 }

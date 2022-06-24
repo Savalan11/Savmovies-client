@@ -1,48 +1,26 @@
-$backgroundColor: #E9F6FF;
-$cardColor: #66C3FF;
-$textColor: #003D66;
-$boxShadowColor: #006BB3;
-$buttonColor: #001F33;
+$backgroundColor: #f8f9fa;
+$cardColor: #fff;
+$textColor: #343a40;
+$boxShadowColor: #e9ecef;
 
-.login-button {
-    background-color: $buttonColor;
-}
-
-.user-login-card {
+.login-dialog {
     background-color: $cardColor;
     margin-top: 0px;
     box-shadow: none;
 }
 
-.user-login-card > mat-card-header {
-    display: flex;
-    justify-content: center;
-}
-
-.mat-card-header {
+.login-dialog-title {
     color: $textColor;
-    padding-bottom: 10px;
 }
 
-::ng-deep .login-custom > mat-dialog-container {
+.login-dialog-content {
+    color: $textColor;
+}
+
+::ng-deep .login-custom>mat-dialog-container {
     background-color: $cardColor;
 }
 
-.user-login-form-field {
-    color: $textColor;
-} 
-
-::ng-deep .mat-focused .mat-form-field-label {
-    /*change color of label*/
-    color: $textColor !important;
-   }
-  
-   ::ng-deep.mat-form-field-underline {
-    /*change color of underline*/
-    background-color: $textColor !important;
-  } 
-  
-  ::ng-deep.mat-form-field-ripple {
-   /*change color of underline when focused*/
-   background-color: $textColor !important;;
-  }
+.login-actions {
+    display: flex
+}
